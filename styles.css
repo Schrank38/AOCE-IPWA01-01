@@ -1,0 +1,223 @@
+/* Basis-Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Nav */
+.site-header {
+    background-color: #1a365d;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.global-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.global-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.global-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container Layout */
+.main-container {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+/* Im RTL-Modus erscheint das lokale Menü auf breiten Bildschirmen rechts. */
+.main-container.rtl-layout {
+    flex-direction: row-reverse;
+}
+
+/* Lokales Menü mit LTR/RTL Unterstützung */
+.local-menu {
+    width: 250px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-self: flex-start;
+}
+
+.local-menu.ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+.local-menu.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.local-menu h3 {
+    margin-bottom: 1rem;
+    color: #1a365d;
+}
+
+.local-menu ul {
+    list-style: none;
+}
+
+.local-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.local-menu a {
+    color: #2b6cb0;
+    text-decoration: none;
+}
+
+#toggle-dir-btn {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background-color: #e2e8f0;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+}
+
+/* Inhaltsbereich & Controls */
+.content-area {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.information-section {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+.information-section h2 {
+    color: #1a365d;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.controls-panel {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.control-group input,
+.control-group select {
+    padding: 0.6rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Tabelle */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+th {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #2d3748;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    color: #cbd5e0;
+    text-decoration: none;
+}
+
+/* Responsivität (Media Queries) */
+@media (max-width: 768px) {
+    .main-container,
+    .main-container.rtl-layout {
+        flex-direction: column;
+    }
+    .local-menu {
+        width: 100%;
+    }
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
